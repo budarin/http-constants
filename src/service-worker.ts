@@ -19,6 +19,7 @@ export const SW_EVENT_MESSAGEERROR = 'messageerror';
 export const SW_EVENT_UNHANDLEDREJECTION = 'unhandledrejection';
 export const SW_EVENT_REJECTIONHANDLED = 'rejectionhandled';
 export const SW_EVENT_STATECHANGE = 'statechange';
+export const SW_EVENT_UPDATEFOUND = 'updatefound';
 
 // states
 export const SW_STATE_ACTIVATED = 'activated';
