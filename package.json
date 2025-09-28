@@ -1,28 +1,51 @@
 {
-  "name": "@budarin/http-constants",
-  "version": "1.0.0",
-  "description": "Http constants",
-  "keywords": [
-    "http",
-    "constants"
-  ],
-  "author": "Vadim Budarin",
-  "license": "MIT",
-  "type": "module",
-  "main": "src/index.js",
-  "exports": {
-    ".": {
-      "import": "./src/index.js",
-      "types": "./src/index.d.ts"
-    }
-  },
-  "files": [
-    "src/"
-  ],
-  "scripts": {
-    "build": "tsc",
-    "type-check": "tsc --noEmit",
-    "publish-package": "pnpm build && pnpm publish --access public"
-  },
-  "packageManager": "pnpm@10.16.1"
+    "name": "@budarin/http-constants",
+    "version": "1.0.0",
+    "description": "Http constants",
+    "keywords": [
+        "http",
+        "constants"
+    ],
+    "author": "Vadim Budarin",
+    "license": "MIT",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./methods": {
+            "types": "./dist/methods.d.ts",
+            "import": "./dist/methods.js"
+        },
+        "./statuses": {
+            "types": "./dist/statuses.d.ts",
+            "import": "./dist/statuses.js"
+        },
+        "./headers": {
+            "types": "./dist/headers.d.ts",
+            "import": "./dist/headers.js"
+        },
+        "./content-types": {
+            "types": "./dist/content-types.d.ts",
+            "import": "./dist/content-types.js"
+        }
+    },
+    "files": [
+        "dist/"
+    ],
+    "devDependencies": {
+        "prettier": "^3.6.2",
+        "typescript": "^5.0.0"
+    },
+    "scripts": {
+        "build": "tsc",
+        "type-check": "tsc --noEmit",
+        "pnpm-install": "pnpm install",
+        "upgrade-dependencies": "pnpm upgrade -i",
+        "publish-package": "pnpm build && pnpm publish --access=public"
+    },
+    "packageManager": "pnpm@10.16.1"
 }
