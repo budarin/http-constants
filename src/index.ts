@@ -9,3 +9,6 @@ export * from './headers.js';
 
 // Content Types
 export * from './content-types.js';
+
+// Service Worker Constants
+export * from './service-worker.js';

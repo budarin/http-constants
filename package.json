@@ -31,6 +31,10 @@
         "./content-types": {
             "types": "./dist/content-types.d.ts",
             "import": "./dist/content-types.js"
+        },
+        "./service-worker": {
+            "types": "./dist/service-worker.d.ts",
+            "import": "./dist/service-worker.js"
         }
     },
     "files": [
