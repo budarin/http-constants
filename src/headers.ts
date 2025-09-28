@@ -62,7 +62,10 @@ export const HEADER_X_CONTENT_TYPE_OPTIONS = 'X-Content-Type-Options';
 export const HEADER_X_FRAME_OPTIONS = 'X-Frame-Options';
 export const HEADER_X_XSS_PROTECTION = 'X-XSS-Protection';
 export const HEADER_REFERRER_POLICY = 'Referrer-Policy';
+export const HEADER_REFERER_POLICY = 'Referrer-Policy';
 export const HEADER_PERMISSIONS_POLICY = 'Permissions-Policy';
+export const HEADER_REPORT_TO = 'Report-To';
+export const HEADER_REPORTING_ENDPOINTS = 'Reporting-Endpoints';
 
 // CORS headers
 export const HEADER_ACCESS_CONTROL_ALLOW_ORIGIN = 'Access-Control-Allow-Origin';
