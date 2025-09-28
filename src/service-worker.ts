@@ -1,8 +1,8 @@
 // sw messages
-export const SW_INSTALLED = 'SW_INSTALLED';
-export const SW_INSTALLING = 'SW_INSTALLING';
-export const SW_START_INSTALLING = 'SW_START_INSTALLING';
-export const SKIP_MSG_WAITING = 'SKIP_WAITING';
+export const SW_MSG_INSTALLED = 'SW_INSTALLED';
+export const SW_MSG_INSTALLING = 'SW_INSTALLING';
+export const SW_MSG_START_INSTALLING = 'SW_START_INSTALLING';
+export const SW_MSG_SKIP_WAITING = 'SKIP_WAITING';
 export const SW_MSG_PAGE_RELOAD = 'PAGE_RELOAD';
 
 // events
