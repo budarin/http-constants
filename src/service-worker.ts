@@ -1,12 +1,12 @@
 // app consts
-export const PAGE_RELOAD = 'PAGE_RELOAD';
-
 export const SW_INSTALLED = 'SW_INSTALLED';
 export const SW_INSTALLING = 'SW_INSTALLING';
 export const SW_START_INSTALLING = 'SW_START_INSTALLING';
 
 // sw messages
-export const SKIP_WAITING = 'skipWaiting';
+export const SKIP_MSG_WAITING = 'skipWaiting';
+export const SW_MSG_PAGE_RELOAD = 'PAGE_RELOAD';
+
 // events
 export const SW_EVENT_INSTALL = 'install';
 export const SW_EVENT_ACTIVATE = 'activate';
