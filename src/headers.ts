@@ -88,6 +88,7 @@ export const HEADER_X_REAL_IP = 'X-Real-IP';
 export const HEADER_X_REQUESTED_WITH = 'X-Requested-With';
 export const HEADER_X_CSRF_TOKEN = 'X-CSRF-Token';
 export const HEADER_X_API_KEY = 'X-API-Key';
+export const HEADER_X_REQUEST_ID = 'X-Request-ID';
 
 // Cookie headers
 export const HEADER_COOKIE = 'Cookie';
