@@ -118,7 +118,7 @@ import {
     HTTP_METHOD_GET,
     HTTP_METHOD_POST,
 } from '@budarin/http-constants/methods';
-import { OK, NOT_FOUND } from '@budarin/http-constants/statuses';
+import { OK, HTTP_STATUS_NOT_FOUND } from '@budarin/http-constants/statuses';
 import { MIME_APPLICATION_JSON } from '@budarin/http-constants/mime-types';
 import { HEADER_CONTENT_TYPE } from '@budarin/http-constants/headers';
 
