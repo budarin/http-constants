@@ -10,6 +10,9 @@ export * from './headers.js';
 // MIME Types
 export * from './mime-types.js';
 
+// Content Types (legacy)
+export * from './content-types.js';
+
 // Service Worker Constants
 export * from './service-worker.js';
 

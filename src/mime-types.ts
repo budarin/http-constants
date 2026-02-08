@@ -83,7 +83,7 @@ export const MIME_MULTIPART_ALTERNATIVE = 'multipart/alternative';
 export const MIME_MULTIPART_MIXED = 'multipart/mixed';
 
 // Font types
-export const FONT_WOFF = 'font/woff';
+export const MIME_FONT_WOFF = 'font/woff';
 export const MIME_FONT_WOFF2 = 'font/woff2';
 export const MIME_FONT_TTF = 'font/ttf';
 export const MIME_FONT_OTF = 'font/otf';

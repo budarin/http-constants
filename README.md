@@ -14,6 +14,8 @@ pnpm add @budarin/http-constants
 
 ## Использование
 
+> ⚡ **Оптимизация бандла**: Библиотека поддерживает tree-shaking из коробки. Импортируйте только нужные константы - неиспользуемый код автоматически исключается из финального бандла!
+
 ### Импорт всех констант
 
 ```typescript
@@ -26,41 +28,38 @@ status = httpConsts.HTTP_STATUS_OK;
 import { HTTP_STATUS_OK, ... } from '@budarin/http-constants';
 ```
 
-### Импорт отдельных модулей
+### Импорт отдельных констант (рекомендуемый способ)
 
 ```typescript
-// HTTP методы
+// Импортируйте только нужные константы - tree-shaking работает отлично!
 import {
+    // HTTP методы
     HTTP_METHOD_GET,
     HTTP_METHOD_POST,
     HTTP_METHOD_PUT,
     HTTP_METHOD_DELETE,
-} from '@budarin/http-constants/methods';
-
-// HTTP статус коды
-import {
+    
+    // HTTP статус коды
     HTTP_STATUS_OK,
     HTTP_STATUS_NOT_FOUND,
     HTTP_STATUS_INTERNAL_SERVER_ERROR,
-} from '@budarin/http-constants/statuses';
-
-// HTTP заголовки
-import {
+    
+    // HTTP заголовки
     HEADER_CONTENT_TYPE,
     HEADER_AUTHORIZATION,
-} from '@budarin/http-constants/headers';
-
-// MIME Types
-import {
+    
+    // MIME Types
     MIME_APPLICATION_JSON,
     MIME_TEXT_HTML,
-} from '@budarin/http-constants/mime-types';
-
-// Service Worker константы
-import {
+    
+    // Content Types (legacy)
+    CONTENT_TYPE_APPLICATION_JSON,
+    CONTENT_TYPE_TEXT_HTML,
+    
+    // Service Worker константы
     SW_EVENT_INSTALL,
     SW_STATE_ACTIVATED,
-} from '@budarin/http-constants/service-worker';
+} from '@budarin/http-constants';
 ```
 
 ## Доступные константы
@@ -101,9 +100,17 @@ import {
 - **Audio**: `MIME_AUDIO_MPEG`, `MIME_AUDIO_WAV`, `MIME_AUDIO_OGG`, `MIME_AUDIO_MP4`, `MIME_AUDIO_AAC`, `MIME_AUDIO_FLAC`, `MIME_AUDIO_WEBM`, `MIME_AUDIO_X_WAV`
 - **Video**: `MIME_VIDEO_MP4`, `MIME_VIDEO_WEBM`, `MIME_VIDEO_OGG`, `MIME_VIDEO_AVI`, `MIME_VIDEO_QUICKTIME`, `MIME_VIDEO_X_FLV`, `MIME_VIDEO_3GPP`, `MIME_VIDEO_X_MS_WMV`
 - **Multipart**: `MIME_MULTIPART_FORM_DATA`, `MIME_MULTIPART_BYTERANGES`, `MIME_MULTIPART_ALTERNATIVE`, `MIME_MULTIPART_MIXED`
-- **Font**: `FONT_WOFF`, `MIME_FONT_WOFF2`, `MIME_FONT_TTF`, `MIME_FONT_OTF`
+- **Font**: `MIME_FONT_WOFF`, `MIME_FONT_WOFF2`, `MIME_FONT_TTF`, `MIME_FONT_OTF`
 - **Message**: `MIME_MESSAGE_RFC822`, `MIME_MESSAGE_PARTIAL`, `MIME_MESSAGE_EXTERNAL_BODY`
 - **Model**: `MIME_MODEL_GLTF_JSON`, `MIME_MODEL_GLTF_BINARY`
+
+### Content Types (`content-types`) - Legacy Support
+
+Для обратной совместимости доступны константы с префиксом `CONTENT_TYPE_`:
+- **Application**: `CONTENT_TYPE_APPLICATION_JSON`, `CONTENT_TYPE_APPLICATION_XML`, и др.
+- **Text**: `CONTENT_TYPE_TEXT_PLAIN`, `CONTENT_TYPE_TEXT_HTML`, и др.
+- **Image**: `CONTENT_TYPE_IMAGE_JPEG`, `CONTENT_TYPE_IMAGE_PNG`, и др.
+- И все остальные с аналогичным префиксом
 
 ### Service Worker messages(`service-worker`)
 
@@ -117,10 +124,13 @@ import {
 import {
     HTTP_METHOD_GET,
     HTTP_METHOD_POST,
-} from '@budarin/http-constants/methods';
-import { OK, HTTP_STATUS_NOT_FOUND } from '@budarin/http-constants/statuses';
-import { MIME_APPLICATION_JSON } from '@budarin/http-constants/mime-types';
-import { HEADER_CONTENT_TYPE } from '@budarin/http-constants/headers';
+    HTTP_STATUS_OK,
+    HTTP_STATUS_NOT_FOUND,
+    MIME_APPLICATION_JSON,
+    HEADER_CONTENT_TYPE,
+} from '@budarin/http-constants';
+import { MIME_APPLICATION_JSON } from '@budarin/http-constants';
+import { HEADER_CONTENT_TYPE } from '@budarin/http-constants';
 
 // Использование в Express.js
 app.get('/api/users', (req, res) => {
