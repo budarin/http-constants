@@ -51,7 +51,7 @@
         "build": "tsc",
         "type-check": "tsc --noEmit",
         "pnpm-install": "pnpm install",
-        "upgrade-dependencies": "pnpm upgrade -i",
+        "upgrade-deps": "pnpm upgrade -i",
         "publish-package": "pnpm build && pnpm publish --access=public"
     },
     "packageManager": "pnpm@10.16.1"
