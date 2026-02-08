@@ -14,53 +14,7 @@ pnpm add @budarin/http-constants
 
 ## Использование
 
-> ⚡ **Оптимизация бандла**: Библиотека поддерживает tree-shaking из коробки. Импортируйте только нужные константы - неиспользуемый код автоматически исключается из финального бандла!
-
-### Импорт всех констант
-
-```typescript
-import httpConsts from '@budarin/http-constants';
-...
-status = httpConsts.HTTP_STATUS_OK;
-
-// или
-
-import { HTTP_STATUS_OK, ... } from '@budarin/http-constants';
-```
-
-### Импорт отдельных констант (рекомендуемый способ)
-
-```typescript
-// Импортируйте только нужные константы - tree-shaking работает отлично!
-import {
-    // HTTP методы
-    HTTP_METHOD_GET,
-    HTTP_METHOD_POST,
-    HTTP_METHOD_PUT,
-    HTTP_METHOD_DELETE,
-    
-    // HTTP статус коды
-    HTTP_STATUS_OK,
-    HTTP_STATUS_NOT_FOUND,
-    HTTP_STATUS_INTERNAL_SERVER_ERROR,
-    
-    // HTTP заголовки
-    HEADER_CONTENT_TYPE,
-    HEADER_AUTHORIZATION,
-    
-    // MIME Types
-    MIME_APPLICATION_JSON,
-    MIME_TEXT_HTML,
-    
-    // Content Types (legacy)
-    CONTENT_TYPE_APPLICATION_JSON,
-    CONTENT_TYPE_TEXT_HTML,
-    
-    // Service Worker константы
-    SW_EVENT_INSTALL,
-    SW_STATE_ACTIVATED,
-} from '@budarin/http-constants';
-```
+> ⚡ **Оптимизация бандла**: Библиотека использует **subpath exports** - каждый модуль импортируется отдельно, что обеспечивает идеальный tree-shaking и отсутствие лишних chunks в бандле!
 
 ## Доступные константы
 
@@ -107,6 +61,7 @@ import {
 ### Content Types (`content-types`) - Legacy Support
 
 Для обратной совместимости доступны константы с префиксом `CONTENT_TYPE_`:
+
 - **Application**: `CONTENT_TYPE_APPLICATION_JSON`, `CONTENT_TYPE_APPLICATION_XML`, и др.
 - **Text**: `CONTENT_TYPE_TEXT_PLAIN`, `CONTENT_TYPE_TEXT_HTML`, и др.
 - **Image**: `CONTENT_TYPE_IMAGE_JPEG`, `CONTENT_TYPE_IMAGE_PNG`, и др.
@@ -124,13 +79,14 @@ import {
 import {
     HTTP_METHOD_GET,
     HTTP_METHOD_POST,
-    HTTP_STATUS_OK,
-    HTTP_STATUS_NOT_FOUND,
-    MIME_APPLICATION_JSON,
+} from '@budarin/http-constants/methods';
+import { HTTP_STATUS_OK } from '@budarin/http-constants/statuses';
+import { MIME_APPLICATION_JSON } from '@budarin/http-constants/mime-types';
+import {
     HEADER_CONTENT_TYPE,
-} from '@budarin/http-constants';
-import { MIME_APPLICATION_JSON } from '@budarin/http-constants';
-import { HEADER_CONTENT_TYPE } from '@budarin/http-constants';
+    HEADER_CONTENT_SECURITY_POLICY,
+    HEADER_X_FRAME_OPTIONS,
+} from '@budarin/http-constants/headers';
 
 // Использование в Express.js
 app.get('/api/users', (req, res) => {
