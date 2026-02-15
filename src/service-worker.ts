@@ -1,9 +1,13 @@
 // sw messages
+// install
 export const SW_MSG_START_INSTALLING = 'SW_MSG_START_INSTALLING';
 export const SW_MSG_INSTALLING = 'SW_MSG_INSTALLING';
 export const SW_MSG_INSTALLED = 'SW_MSG_INSTALLED';
+// activate
 export const SW_MSG_SKIP_WAITING = 'SW_MSG_SKIP_WAITING';
+// page reload
 export const SW_MSG_PAGE_RELOAD = 'SW_MSG_PAGE_RELOAD';
+// activate
 export const SW_MSG_START_ACTIVATING = 'SW_MSG_START_ACTIVATING';
 export const SW_MSG_ACTIVATED = 'SW_MSG_ACTIVATED';
 
@@ -21,6 +25,11 @@ export const SW_EVENT_UNHANDLEDREJECTION = 'unhandledrejection';
 export const SW_EVENT_REJECTIONHANDLED = 'rejectionhandled';
 export const SW_EVENT_STATECHANGE = 'statechange';
 export const SW_EVENT_UPDATEFOUND = 'updatefound';
+// background fetch
+export const SW_EVENT_BACKGROUNDFETCHSUCCESS = 'backgroundfetchsuccess';
+export const SW_EVENT_BACKGROUNDFETCHFAIL = 'backgroundfetchfail';
+export const SW_EVENT_BACKGROUNDFETCHABORT = 'backgroundfetchabort';
+export const SW_EVENT_BACKGROUNDFETCHCLICK = 'backgroundfetchclick';
 
 // states
 export const SW_STATE_ACTIVATED = 'activated';
