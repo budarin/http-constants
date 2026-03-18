@@ -13,8 +13,9 @@ pnpm add @budarin/http-constants
 ```
 
 ## Использование
-
-> ⚡ **Оптимизация бандла**: Библиотека использует **subpath exports** - каждый модуль импортируется отдельно, что обеспечивает идеальный tree-shaking и отсутствие лишних chunks в бандле!
+> ⚡ **Оптимизация бандла**: Библиотека использует **subpath exports** (например, `/methods`, `/headers`, ...), поэтому импорт отдельных модулей дает идеальный tree-shaking.
+>
+> Также поддерживается корневой entry `@budarin/http-constants` с **именованными (named) exports**, если нужен единый импорт “в одну строку”.
 
 ## Доступные константы
 
@@ -79,14 +80,12 @@ pnpm add @budarin/http-constants
 import {
     HTTP_METHOD_GET,
     HTTP_METHOD_POST,
-} from '@budarin/http-constants/methods';
-import { HTTP_STATUS_OK } from '@budarin/http-constants/statuses';
-import { MIME_APPLICATION_JSON } from '@budarin/http-constants/mime-types';
-import {
     HEADER_CONTENT_TYPE,
     HEADER_CONTENT_SECURITY_POLICY,
     HEADER_X_FRAME_OPTIONS,
-} from '@budarin/http-constants/headers';
+    HTTP_STATUS_OK,
+    MIME_APPLICATION_JSON,
+} from '@budarin/http-constants';
 
 // Использование в Express.js
 app.get('/api/users', (req, res) => {

@@ -1,6 +1,6 @@
 {
     "name": "@budarin/http-constants",
-    "version": "1.0.22",
+    "version": "1.0.23",
     "description": "Http constants",
     "keywords": [
         "http",
@@ -11,6 +11,10 @@
     "type": "module",
     "sideEffects": false,
     "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
         "./service-worker": {
             "types": "./dist/service-worker.d.ts",
             "import": "./dist/service-worker.js"
